@@ -29,7 +29,7 @@ public class ResponseResult<T> {
     }
 
     public static <T> ResponseResult<T> ok(String message) {
-        return new ResponseResult<>(HttpStatus.OK.value(), new ResponseMessage(message).value());
+        return new ResponseResult<>(HttpStatus.OK.value(), message);
     }
 
     public static <T> ResponseResult<T> ok() {
@@ -37,11 +37,11 @@ public class ResponseResult<T> {
     }
 
     public static <T> ResponseResult<T> ok(String message, T data) {
-        return new ResponseResult<>(HttpStatus.OK.value(), new ResponseMessage(message).value(), data);
+        return new ResponseResult<>(HttpStatus.OK.value(), message, data);
     }
 
     public static <T> ResponseResult<T> error(String message) {
-        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), new ResponseMessage(message).value());
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), message);
     }
 
     public static <T> ResponseResult<T> error(T data) {
@@ -49,7 +49,7 @@ public class ResponseResult<T> {
     }
 
     public static <T> ResponseResult<T> error(String message, T data) {
-        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), new ResponseMessage(message).value());
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), message);
     }
 
     public static <T> ResponseResult<T> error() {
@@ -71,10 +71,6 @@ public class ResponseResult<T> {
 
     @Override
     public String toString() {
-        return "ResponseResult{" +
-            "status=" + status +
-            ", message=" + message +
-            ", data=" + data +
-            '}';
+        return "ResponseResult{" + "status=" + status + ", message=" + message + ", data=" + data + '}';
     }
 }
