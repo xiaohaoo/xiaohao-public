@@ -1,12 +1,13 @@
 package com.xiaohaoo.common.web;
 
 /**
+ * Copyright (c) 2022 xiaohao. All Rights Reserved.
+ *
  * @author xiaohao
  * @version 1.0
- * @date 2022-04-29 2:25 PM
- * @Copyright © 2022 xiaohao. All Rights Reserved.
+ * date 2022-04-29 2:25 PM
  */
-public enum HttpStatus {
+enum HttpStatus {
 
     CONTINUE(100, "Continue"),
 
@@ -36,18 +37,15 @@ public enum HttpStatus {
 
     IM_USED(226, "IM Used"),
 
-
     MULTIPLE_CHOICES(300, "Multiple Choices"),
 
     MOVED_PERMANENTLY(301, "Moved Permanently"),
 
     FOUND(302, "Found"),
 
-
     SEE_OTHER(303, "See Other"),
 
     NOT_MODIFIED(304, "Not Modified"),
-
 
     TEMPORARY_REDIRECT(307, "Temporary Redirect"),
 
@@ -81,9 +79,7 @@ public enum HttpStatus {
 
     PAYLOAD_TOO_LARGE(413, "Payload Too Large"),
 
-
     URI_TOO_LONG(414, "URI Too Long"),
-
 
     UNSUPPORTED_MEDIA_TYPE(415, "Unsupported Media Type"),
 
@@ -92,7 +88,6 @@ public enum HttpStatus {
     EXPECTATION_FAILED(417, "Expectation Failed"),
 
     I_AM_A_TEAPOT(418, "I'm a teapot"),
-
 
     UNPROCESSABLE_ENTITY(422, "Unprocessable Entity"),
 
@@ -143,11 +138,9 @@ public enum HttpStatus {
         this.reasonPhrase = reasonPhrase;
     }
 
-
     public int value() {
         return this.value;
     }
-
 
     @Override
     public String toString() {

@@ -1,10 +1,11 @@
 package com.xiaohaoo.common.web;
 
 /**
+ * Copyright (c) 2022 xiaohao. All Rights Reserved.
+ *
  * @author xiaohao
  * @version 1.0
- * @date 2022-04-29 2:20 PM
- * @Copyright © 2022 xiaohao. All Rights Reserved.
+ * date 2022-04-29 2:20 PM
  */
 public class ResponseResult<T> {
     private final HttpStatus status;
@@ -29,7 +30,7 @@ public class ResponseResult<T> {
     }
 
     public static <T> ResponseResult<T> ok(String message) {
-        return new ResponseResult<T>(HttpStatus.OK, new ResponseMessage(message));
+        return new ResponseResult<>(HttpStatus.OK, new ResponseMessage(message));
     }
 
     public static <T> ResponseResult<T> ok() {
@@ -41,7 +42,7 @@ public class ResponseResult<T> {
     }
 
     public static <T> ResponseResult<T> error(String message) {
-        return new ResponseResult<T>(HttpStatus.INTERNAL_SERVER_ERROR, new ResponseMessage(message));
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR, new ResponseMessage(message));
     }
 
     public static <T> ResponseResult<T> error(T data) {
