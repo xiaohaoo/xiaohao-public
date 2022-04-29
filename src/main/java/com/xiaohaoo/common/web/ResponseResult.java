@@ -57,4 +57,12 @@ public class ResponseResult<T> {
         return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR, ResponseMessage.INTERNAL_SERVER_ERROR);
     }
 
+    @Override
+    public String toString() {
+        return "ResponseResult{" +
+            "status=" + status +
+            ", message=" + message +
+            ", data=" + data +
+            '}';
+    }
 }
