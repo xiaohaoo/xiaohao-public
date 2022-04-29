@@ -56,7 +56,6 @@ public class ResponseResult<T> {
         return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), ResponseMessage.INTERNAL_SERVER_ERROR.value());
     }
 
-
     public int getStatus() {
         return status;
     }
