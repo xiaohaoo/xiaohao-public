@@ -1,6 +1,15 @@
-plugins {
-    id 'java'
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.xiaohaoo:maven-publishing-gradle-plugin:1.0'
+    }
 }
+
+apply plugin: 'java'
+apply plugin: 'com.xiaohaoo.maven-publishing'
 
 group 'com.xiaohaoo'
 version '1.0'
@@ -16,4 +25,10 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+//发布配置
+xiaohaoMavenPublishing {
+    url = "https://github.com/xiaohaoo/xiaohao-common"
+    description = "项目公共类库"
 }

@@ -20,8 +20,12 @@ class ResponseMessage {
     protected static final ResponseMessage FORBIDDEN_MESSAGE = new ResponseMessage("数据访问暂无权限");
     protected static final ResponseMessage NO_CONTENT_MESSAGE = new ResponseMessage("");
 
+    public String value() {
+        return this.message;
+    }
+
     @Override
     public String toString() {
-        return this.message;
+        return this.value();
     }
 }
