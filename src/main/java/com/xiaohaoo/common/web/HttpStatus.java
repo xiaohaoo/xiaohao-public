@@ -5,7 +5,7 @@ package com.xiaohaoo.common.web;
  *
  * @author xiaohao
  * @version 1.0
- * date 2022-04-29 2:25 PM
+ * @date 2022-04-29 2:25 PM
  */
 enum HttpStatus {
 

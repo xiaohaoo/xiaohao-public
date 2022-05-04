@@ -5,7 +5,7 @@ package com.xiaohaoo.common.web;
  *
  * @author xiaohao
  * @version 1.0
- * date 2022-04-29 2:20 PM
+ * @date 2022-04-29 2:20 PM
  */
 public class ResponseResult<T> {
     private final int status;
