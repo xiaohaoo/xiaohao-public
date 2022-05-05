@@ -8,18 +8,18 @@ package com.xiaohaoo.common.web;
  * @date 2022-04-29 2:20 PM
  */
 public class ResponseResult<T> {
-    private final int status;
+    private final int code;
     private final String message;
     private final T data;
 
-    private ResponseResult(int status, String message, T data) {
-        this.status = status;
+    private ResponseResult(int code, String message, T data) {
+        this.code = code;
         this.message = message;
         this.data = data;
     }
 
     private ResponseResult(int status, String message) {
-        this.status = status;
+        this.code = status;
         this.message = message;
         this.data = null;
     }
@@ -57,7 +57,7 @@ public class ResponseResult<T> {
     }
 
     public int getStatus() {
-        return status;
+        return code;
     }
 
     public String getMessage() {
@@ -70,6 +70,6 @@ public class ResponseResult<T> {
 
     @Override
     public String toString() {
-        return "ResponseResult{" + "status=" + status + ", message=" + message + ", data=" + data + '}';
+        return "ResponseResult{" + "code=" + code + ", message=" + message + ", data=" + data + '}';
     }
 }
