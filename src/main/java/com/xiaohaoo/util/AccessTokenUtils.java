@@ -1,4 +1,4 @@
-package com.xiaohaoo.common.util;
+package com.xiaohaoo.util;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -21,14 +21,13 @@ public class AccessTokenUtils {
         SECRET = secret;
     }
 
-    public static String createToken(String value) {
-        return JWT.create().withAudience("xiaohao").withIssuedAt(new Date()).withClaim("value", value).sign(ALGORITHM);
+    public static String createToken(String claim) {
+        return JWT.create().withAudience("xiaohao").withIssuedAt(new Date()).withClaim("claim", claim).sign(ALGORITHM);
     }
-
 
     public static String getClaimFromToken(String token) {
         JWTVerifier jwtVerifier = JWT.require(ALGORITHM).build();
         DecodedJWT decodedJwt = jwtVerifier.verify(token);
-        return decodedJwt.getClaim("value").asString();
+        return decodedJwt.getClaim("claim").asString();
     }
 }

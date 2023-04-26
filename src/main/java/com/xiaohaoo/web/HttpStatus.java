@@ -1,4 +1,4 @@
-package com.xiaohaoo.common.web;
+package com.xiaohaoo.web;
 
 /**
  * Copyright (c) 2022 xiaohao. All Rights Reserved.
@@ -129,22 +129,26 @@ enum HttpStatus {
 
     NETWORK_AUTHENTICATION_REQUIRED(511, "Network Authentication Required");
 
-    private final int value;
+    private final int statusCode;
 
     private final String reasonPhrase;
 
     HttpStatus(int value, String reasonPhrase) {
-        this.value = value;
+        this.statusCode = value;
         this.reasonPhrase = reasonPhrase;
     }
 
-    public int value() {
-        return this.value;
+    public int statusCode() {
+        return this.statusCode;
+    }
+
+    public String reasonPhrase() {
+        return this.reasonPhrase;
     }
 
     @Override
     public String toString() {
-        return String.valueOf(this.value);
+        return String.valueOf(this.statusCode);
     }
 
 }

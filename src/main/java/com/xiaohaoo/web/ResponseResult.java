@@ -1,4 +1,4 @@
-package com.xiaohaoo.common.web;
+package com.xiaohaoo.web;
 
 /**
  * Copyright (c) 2022 xiaohao. All Rights Reserved.
@@ -25,47 +25,35 @@ public class ResponseResult<T> {
     }
 
     public static <T> ResponseResult<T> ok(T data) {
-        return new ResponseResult<>(HttpStatus.OK.value(), ResponseMessage.OK.value(), data);
+        return new ResponseResult<>(HttpStatus.OK.statusCode(), HttpStatus.OK.reasonPhrase(), data);
     }
 
     public static <T> ResponseResult<T> ok(String message) {
-        return new ResponseResult<>(HttpStatus.OK.value(), message);
+        return new ResponseResult<>(HttpStatus.OK.statusCode(), message);
     }
 
     public static <T> ResponseResult<T> ok() {
-        return new ResponseResult<>(HttpStatus.OK.value(), ResponseMessage.OK.value());
+        return new ResponseResult<>(HttpStatus.OK.statusCode(), HttpStatus.OK.reasonPhrase());
     }
 
     public static <T> ResponseResult<T> ok(String message, T data) {
-        return new ResponseResult<>(HttpStatus.OK.value(), message, data);
+        return new ResponseResult<>(HttpStatus.OK.statusCode(), message, data);
     }
 
     public static <T> ResponseResult<T> error(String message) {
-        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), message);
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.statusCode(), message);
     }
 
     public static <T> ResponseResult<T> error(T data) {
-        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), ResponseMessage.INTERNAL_SERVER_ERROR.value(), data);
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.statusCode(), HttpStatus.INTERNAL_SERVER_ERROR.reasonPhrase(), data);
     }
 
     public static <T> ResponseResult<T> error(String message, T data) {
-        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), message);
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.statusCode(), message);
     }
 
     public static <T> ResponseResult<T> error() {
-        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), ResponseMessage.INTERNAL_SERVER_ERROR.value());
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public T getData() {
-        return data;
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.statusCode(), HttpStatus.INTERNAL_SERVER_ERROR.reasonPhrase());
     }
 
     @Override

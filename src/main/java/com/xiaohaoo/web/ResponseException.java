@@ -1,4 +1,4 @@
-package com.xiaohaoo.common.web;
+package com.xiaohaoo.web;
 
 /**
  * Copyright (c) 2022 xiaohao. All Rights Reserved.
@@ -8,8 +8,8 @@ package com.xiaohaoo.common.web;
  * @date 2022-05-05 12:53 AM
  */
 
-public class ResultException extends Exception {
-    public ResultException(String message) {
+public class ResponseException extends Exception {
+    public ResponseException(String message) {
         super(message);
     }
 }

@@ -1,21 +1,26 @@
 buildscript {
     repositories {
         mavenLocal()
-        mavenCentral()
     }
     dependencies {
-        classpath 'com.xiaohaoo:maven-publishing-gradle-plugin:1.0'
+        classpath 'com.xiaohaoo:maven-publishing-gradle-plugin:1.0.1'
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'com.xiaohaoo.maven-publishing'
 
-group 'com.xiaohaoo'
-version '1.0'
+group = 'com.xiaohaoo'
+version = '1.0.1'
 
 repositories {
+    mavenLocal()
     mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 dependencies {

@@ -1,5 +1,5 @@
 
-package com.xiaohaoo.common.web;
+package com.xiaohaoo.web;
 
 /**
  * Copyright (c) 2022 xiaohao. All Rights Reserved.
