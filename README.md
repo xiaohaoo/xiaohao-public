@@ -5,5 +5,5 @@
 ## 使用方法
 
 ```groovy
-implementation 'com.xiaohaoo:xiaohao-common:1.0'
+implementation 'com.xiaohaoo:xiaohao-public:1.0.1'
 ```
