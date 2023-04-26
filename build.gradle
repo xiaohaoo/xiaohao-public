@@ -35,6 +35,6 @@ test {
 
 //发布配置
 xiaohaoMavenPublishing {
-    url = "https://github.com/xiaohaoo/xiaohao-common"
+    url = "https://github.com/xiaohaoo/xiaohao-public"
     description = "项目公共类库"
 }
