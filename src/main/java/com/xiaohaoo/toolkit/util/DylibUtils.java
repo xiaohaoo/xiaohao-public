@@ -1,4 +1,4 @@
-package com.xiaohaoo.util;
+package com.xiaohaoo.toolkit.util;
 
 import java.io.IOException;
 import java.io.InputStream;

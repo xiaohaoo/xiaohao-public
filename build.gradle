@@ -1,17 +1,19 @@
 buildscript {
     repositories {
+        mavenCentral()
         mavenLocal()
     }
     dependencies {
         classpath 'com.xiaohaoo:maven-publishing-gradle-plugin:1.0.1'
     }
 }
-
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 apply plugin: 'com.xiaohaoo.maven-publishing'
 
 group = 'com.xiaohaoo'
-version = '1.0.1'
+version = '1.0.4'
 
 repositories {
     mavenLocal()
@@ -19,14 +21,16 @@ repositories {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_9
-    targetCompatibility = JavaVersion.VERSION_1_9
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 dependencies {
     implementation 'com.auth0:java-jwt:3.18.1'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    compileOnly 'org.springframework:spring-web:[6.0.0,7.0.0)'
+    compileOnly 'org.apache.tomcat.embed:tomcat-embed-core:[10.0.0,11.0.0)'
 }
 
 test {
@@ -35,6 +39,6 @@ test {
 
 //发布配置
 xiaohaoMavenPublishing {
-    url = "https://github.com/xiaohaoo/xiaohao-public"
-    description = "项目公共类库"
+    url = "https://github.com/xiaohaoo/xiaohao-toolkit"
+    description = "项目公共工具类库"
 }

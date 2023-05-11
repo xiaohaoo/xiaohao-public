@@ -1,9 +1,9 @@
-# xiaohao-common
+# xiaohao-toolkit
 
-项目公共类库
+项目公共工具类库
 
 ## 使用方法
 
 ```groovy
-implementation 'com.xiaohaoo:xiaohao-public:1.0.1'
+implementation 'com.xiaohaoo:xiaohao-public:1.0.4'
 ```

@@ -1,4 +1,4 @@
-package com.xiaohaoo.web;
+package com.xiaohaoo.toolkit.web;
 
 /**
  * Copyright (c) 2022 xiaohao. All Rights Reserved.
@@ -8,6 +8,18 @@ package com.xiaohaoo.web;
  * @date 2022-04-29 2:20 PM
  */
 public class ResponseResult<T> {
+    public static <T> ResponseResult<T> unauthorized() {
+        return new ResponseResult<>(HttpStatus.UNAUTHORIZED.statusCode(), HttpStatus.UNAUTHORIZED.reasonPhrase());
+    }
+
+    public static <T> ResponseResult<T> unauthorized(String message) {
+        return new ResponseResult<>(HttpStatus.UNAUTHORIZED.statusCode(), message);
+    }
+
+    public int getCode() {
+        return code;
+    }
+
     private final int code;
     private final String message;
     private final T data;
@@ -42,6 +54,14 @@ public class ResponseResult<T> {
 
     public static <T> ResponseResult<T> error(String message) {
         return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.statusCode(), message);
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public T getData() {
+        return data;
     }
 
     public static <T> ResponseResult<T> error(T data) {
