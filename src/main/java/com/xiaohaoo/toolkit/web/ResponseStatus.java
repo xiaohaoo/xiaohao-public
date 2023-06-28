@@ -7,7 +7,7 @@ package com.xiaohaoo.toolkit.web;
  * @version 1.0
  * @date 2022-04-29 2:25 PM
  */
-enum HttpStatus {
+public enum ResponseStatus {
 
     CONTINUE(100, "Continue"),
 
@@ -133,7 +133,7 @@ enum HttpStatus {
 
     private final String reasonPhrase;
 
-    HttpStatus(int value, String reasonPhrase) {
+    ResponseStatus(int value, String reasonPhrase) {
         this.statusCode = value;
         this.reasonPhrase = reasonPhrase;
     }

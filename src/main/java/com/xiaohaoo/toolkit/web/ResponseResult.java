@@ -9,11 +9,11 @@ package com.xiaohaoo.toolkit.web;
  */
 public class ResponseResult<T> {
     public static <T> ResponseResult<T> unauthorized() {
-        return new ResponseResult<>(HttpStatus.UNAUTHORIZED.statusCode(), HttpStatus.UNAUTHORIZED.reasonPhrase());
+        return new ResponseResult<>(ResponseStatus.UNAUTHORIZED.statusCode(), ResponseStatus.UNAUTHORIZED.reasonPhrase());
     }
 
     public static <T> ResponseResult<T> unauthorized(String message) {
-        return new ResponseResult<>(HttpStatus.UNAUTHORIZED.statusCode(), message);
+        return new ResponseResult<>(ResponseStatus.UNAUTHORIZED.statusCode(), message);
     }
 
     public int getCode() {
@@ -37,23 +37,23 @@ public class ResponseResult<T> {
     }
 
     public static <T> ResponseResult<T> ok(T data) {
-        return new ResponseResult<>(HttpStatus.OK.statusCode(), HttpStatus.OK.reasonPhrase(), data);
+        return new ResponseResult<>(ResponseStatus.OK.statusCode(), ResponseStatus.OK.reasonPhrase(), data);
     }
 
     public static <T> ResponseResult<T> ok(String message) {
-        return new ResponseResult<>(HttpStatus.OK.statusCode(), message);
+        return new ResponseResult<>(ResponseStatus.OK.statusCode(), message);
     }
 
     public static <T> ResponseResult<T> ok() {
-        return new ResponseResult<>(HttpStatus.OK.statusCode(), HttpStatus.OK.reasonPhrase());
+        return new ResponseResult<>(ResponseStatus.OK.statusCode(), ResponseStatus.OK.reasonPhrase());
     }
 
     public static <T> ResponseResult<T> ok(String message, T data) {
-        return new ResponseResult<>(HttpStatus.OK.statusCode(), message, data);
+        return new ResponseResult<>(ResponseStatus.OK.statusCode(), message, data);
     }
 
     public static <T> ResponseResult<T> error(String message) {
-        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.statusCode(), message);
+        return new ResponseResult<>(ResponseStatus.INTERNAL_SERVER_ERROR.statusCode(), message);
     }
 
     public String getMessage() {
@@ -65,15 +65,15 @@ public class ResponseResult<T> {
     }
 
     public static <T> ResponseResult<T> error(T data) {
-        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.statusCode(), HttpStatus.INTERNAL_SERVER_ERROR.reasonPhrase(), data);
+        return new ResponseResult<>(ResponseStatus.INTERNAL_SERVER_ERROR.statusCode(), ResponseStatus.INTERNAL_SERVER_ERROR.reasonPhrase(), data);
     }
 
     public static <T> ResponseResult<T> error(String message, T data) {
-        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.statusCode(), message);
+        return new ResponseResult<>(ResponseStatus.INTERNAL_SERVER_ERROR.statusCode(), message);
     }
 
     public static <T> ResponseResult<T> error() {
-        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.statusCode(), HttpStatus.INTERNAL_SERVER_ERROR.reasonPhrase());
+        return new ResponseResult<>(ResponseStatus.INTERNAL_SERVER_ERROR.statusCode(), ResponseStatus.INTERNAL_SERVER_ERROR.reasonPhrase());
     }
 
     @Override

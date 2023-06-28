@@ -8,8 +8,8 @@ package com.xiaohaoo.toolkit.web;
  * @date 2022-05-05 12:53 AM
  */
 
-public class ResponseException extends Exception {
-    public ResponseException(String message) {
+public class WebException extends Exception {
+    public WebException(String message) {
         super(message);
     }
 }

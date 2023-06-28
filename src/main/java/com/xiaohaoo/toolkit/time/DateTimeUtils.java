@@ -1,4 +1,4 @@
-package com.xiaohaoo.toolkit.util;
+package com.xiaohaoo.toolkit.time;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

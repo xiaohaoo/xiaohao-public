@@ -1,4 +1,4 @@
-package com.xiaohaoo.toolkit.util;
+package com.xiaohaoo.toolkit.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
