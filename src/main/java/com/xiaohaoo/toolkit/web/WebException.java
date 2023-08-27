@@ -5,7 +5,7 @@ package com.xiaohaoo.toolkit.web;
  *
  * @author xiaohao
  * @version 1.0
- * @date 2022-05-05 12:53 AM
+ * @since 2022-05-05 12:53 AM
  */
 
 public class WebException extends Exception {

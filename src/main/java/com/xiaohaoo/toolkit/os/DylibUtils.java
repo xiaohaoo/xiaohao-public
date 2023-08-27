@@ -11,7 +11,7 @@ import java.nio.file.StandardCopyOption;
  *
  * @author xiaohao
  * @version 1.0
- * @date 2023-04-26 7:20 PM
+ * @since 2023-04-26 7:20 PM
  */
 public class DylibUtils {
     private final static String OS_NAME = System.getProperty("os.name");

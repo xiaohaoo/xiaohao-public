@@ -1,25 +1,15 @@
 package com.xiaohaoo.toolkit.web;
 
+import org.springframework.http.HttpStatus;
+
 /**
  * Copyright (c) 2022 xiaohao. All Rights Reserved.
  *
  * @author xiaohao
  * @version 1.0
- * @date 2022-04-29 2:20 PM
+ * @since 2022-04-29 2:20 PM
  */
 public class ResponseResult<T> {
-    public static <T> ResponseResult<T> unauthorized() {
-        return new ResponseResult<>(ResponseStatus.UNAUTHORIZED.statusCode(), ResponseStatus.UNAUTHORIZED.reasonPhrase());
-    }
-
-    public static <T> ResponseResult<T> unauthorized(String message) {
-        return new ResponseResult<>(ResponseStatus.UNAUTHORIZED.statusCode(), message);
-    }
-
-    public int getCode() {
-        return code;
-    }
-
     private final int code;
     private final String message;
     private final T data;
@@ -37,23 +27,47 @@ public class ResponseResult<T> {
     }
 
     public static <T> ResponseResult<T> ok(T data) {
-        return new ResponseResult<>(ResponseStatus.OK.statusCode(), ResponseStatus.OK.reasonPhrase(), data);
+        return new ResponseResult<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), data);
     }
 
-    public static <T> ResponseResult<T> ok(String message) {
-        return new ResponseResult<>(ResponseStatus.OK.statusCode(), message);
+    public static ResponseResult<Void> ok(String message) {
+        return new ResponseResult<>(HttpStatus.OK.value(), message);
     }
 
-    public static <T> ResponseResult<T> ok() {
-        return new ResponseResult<>(ResponseStatus.OK.statusCode(), ResponseStatus.OK.reasonPhrase());
+    public static ResponseResult<Void> ok() {
+        return new ResponseResult<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase());
     }
 
     public static <T> ResponseResult<T> ok(String message, T data) {
-        return new ResponseResult<>(ResponseStatus.OK.statusCode(), message, data);
+        return new ResponseResult<>(HttpStatus.OK.value(), message, data);
     }
 
-    public static <T> ResponseResult<T> error(String message) {
-        return new ResponseResult<>(ResponseStatus.INTERNAL_SERVER_ERROR.statusCode(), message);
+    public static ResponseResult<Void> error(String message) {
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), message);
+    }
+
+    public static <T> ResponseResult<T> unauthorized() {
+        return new ResponseResult<>(HttpStatus.UNAUTHORIZED.value(), HttpStatus.UNAUTHORIZED.getReasonPhrase());
+    }
+
+    public static <T> ResponseResult<T> unauthorized(String message) {
+        return new ResponseResult<>(HttpStatus.UNAUTHORIZED.value(), message);
+    }
+
+    public static <T> ResponseResult<T> error(T data) {
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(), data);
+    }
+
+    public static <T> ResponseResult<T> error(String message, T data) {
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), message);
+    }
+
+    public static ResponseResult<Void> error() {
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
+    }
+
+    public int getCode() {
+        return code;
     }
 
     public String getMessage() {
@@ -62,18 +76,6 @@ public class ResponseResult<T> {
 
     public T getData() {
         return data;
-    }
-
-    public static <T> ResponseResult<T> error(T data) {
-        return new ResponseResult<>(ResponseStatus.INTERNAL_SERVER_ERROR.statusCode(), ResponseStatus.INTERNAL_SERVER_ERROR.reasonPhrase(), data);
-    }
-
-    public static <T> ResponseResult<T> error(String message, T data) {
-        return new ResponseResult<>(ResponseStatus.INTERNAL_SERVER_ERROR.statusCode(), message);
-    }
-
-    public static <T> ResponseResult<T> error() {
-        return new ResponseResult<>(ResponseStatus.INTERNAL_SERVER_ERROR.statusCode(), ResponseStatus.INTERNAL_SERVER_ERROR.reasonPhrase());
     }
 
     @Override

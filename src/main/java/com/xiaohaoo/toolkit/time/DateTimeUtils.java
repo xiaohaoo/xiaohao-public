@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
  *
  * @author xiaohao
  * @version 1.0
- * @date 2022-05-05 2:17 PM
+ * @since 2022-05-05 2:17 PM
  */
 public class DateTimeUtils {
 
