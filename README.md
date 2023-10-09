@@ -7,13 +7,13 @@
 - groovy
 
 ```groovy
-implementation platform("com.xiaohaoo.dependencies:xiaohao-dependencies:1.0.0")
+implementation platform("com.xiaohaoo:xiaohao-dependencies:1.0.1")
 implementation "com.xiaohaoo:xiaohao-toolkit"
 ```
 
 - kotlin
 
 ```kotlin
-implementation(platform("com.xiaohaoo.dependencies:xiaohao-dependencies:1.0.0"))
-implementation("com.xiaohaoo.toolkit:xiaohao-toolkit")
+implementation(platform("com.xiaohaoo:xiaohao-dependencies:1.0.1"))
+implementation("com.xiaohaoo:xiaohao-toolkit")
 ```

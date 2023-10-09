@@ -3,9 +3,10 @@ import com.xiaohaoo.gradle.plugin.MavenPublishingPluginExtension
 buildscript {
     repositories {
         mavenLocal()
+        mavenCentral()
     }
     dependencies {
-        classpath("com.xiaohaoo:maven-publishing-gradle-plugin:1.0.1")
+        classpath("com.xiaohaoo:maven-publishing-gradle-plugin:1.0.2")
     }
 }
 
@@ -15,8 +16,8 @@ plugins {
 
 apply(plugin = "com.xiaohaoo.maven-publishing")
 
-group = "com.xiaohaoo.toolkit"
-version = "1.0.5"
+group = "com.xiaohaoo"
+version = "1.0.6"
 
 repositories {
     mavenLocal()
@@ -42,7 +43,6 @@ tasks.withType<Test> {
 
 
 configure<MavenPublishingPluginExtension> {
-    url = "https://github.com/xiaohaoo/xiaohao-toolkit"
-    description = "项目公共工具类库"
+    url.set("https://github.com/xiaohaoo/xiaohao-toolkit")
+    description.set("项目公共工具类库")
 }
-
