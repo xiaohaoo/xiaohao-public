@@ -30,11 +30,11 @@ public class ResponseResult<T> {
         return new ResponseResult<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), data);
     }
 
-    public static ResponseResult<Void> ok(String message) {
+    public static <T> ResponseResult<T> ok(String message) {
         return new ResponseResult<>(HttpStatus.OK.value(), message);
     }
 
-    public static ResponseResult<Void> ok() {
+    public static <T> ResponseResult<T> ok() {
         return new ResponseResult<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase());
     }
 
@@ -42,7 +42,7 @@ public class ResponseResult<T> {
         return new ResponseResult<>(HttpStatus.OK.value(), message, data);
     }
 
-    public static ResponseResult<Void> error(String message) {
+    public static <T> ResponseResult<T> error(String message) {
         return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), message);
     }
 
@@ -62,7 +62,7 @@ public class ResponseResult<T> {
         return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), message);
     }
 
-    public static ResponseResult<Void> error() {
+    public static <T> ResponseResult<T> error() {
         return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
     }
 

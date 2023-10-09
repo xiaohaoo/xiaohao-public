@@ -4,6 +4,16 @@
 
 ## 使用方法
 
+- groovy
+
 ```groovy
-implementation 'com.xiaohaoo:xiaohao-toolkit:1.0.4'
+implementation platform("com.xiaohaoo.dependencies:xiaohao-dependencies:1.0.0")
+implementation "com.xiaohaoo:xiaohao-toolkit"
+```
+
+- kotlin
+
+```kotlin
+implementation(platform("com.xiaohaoo.dependencies:xiaohao-dependencies:1.0.0"))
+implementation("com.xiaohaoo.toolkit:xiaohao-toolkit")
 ```
