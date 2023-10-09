@@ -1,5 +1,3 @@
-import com.xiaohaoo.gradle.plugin.MavenPublishingPluginExtension
-
 buildscript {
     repositories {
         mavenLocal()
@@ -42,7 +40,7 @@ tasks.withType<Test> {
 }
 
 
-configure<MavenPublishingPluginExtension> {
+configure<com.xiaohaoo.gradle.plugin.MavenPublishingPluginExtension> {
     url.set("https://github.com/xiaohaoo/xiaohao-toolkit")
     description.set("项目公共工具类库")
 }
